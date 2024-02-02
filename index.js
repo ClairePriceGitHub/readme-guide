@@ -55,9 +55,10 @@ const questions = [
         message: 'Usage Instructions',
     },
     {
-        type: 'input',
+        type: 'checkbox',
         name: 'license',
         message: 'License Information',
+        choices: ['MIT', 'GNU General Public License v3.0']
     },
     {
         type: 'input',
@@ -76,19 +77,37 @@ const questions = [
     },
 ];
 
-inquirer.prompt(questions);
+// inquirer.prompt(questions);
 
 
-// const writeToFilePromise = util.promisify(fs.writeFile);
+inquirer.prompt(questions)
+.then((data) => {
+    fs.writeFile('./README.md', JSON.stringify(data, null, '\t'), (err) =>
+    err ? console.log(err) : console.log('Success!')
+    );
+})
 
-// async function writeToFile(data) {
+
+// function to write README file
+// function writeToFile() {
+//     fs.writeFile('./README.md', 'This is a test')
+// }
+
+// function test() {
+//     `test`;
+// }
+
+
+// const writeToFilePromise = util.promisify(fs.writeToFile);
+
+// async function writeToFile() {
 //     try {
-//         await writeToFilePromise('README.md', generateMarkdown(data));
+//         await writeToFilePromise('./README.md', test);
 //         console.log('File written successfully\n');
 //     } catch (err) {
 //         console.log('Error writing to file', err);
 //     }
 // }
 
-// function call to initialize program
+// // function call to initialize program
 // writeToFile();
