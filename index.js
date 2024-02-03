@@ -32,70 +32,69 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'Project title',
+        message: 'What is your project name?',
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Project description',
+        message: 'Please write a short description of the project',
     },
     {
         type: 'input',
-        name: 'contents',
-        message: 'Table of Contents',
+        name: 'installInstruction',
+        message: 'Are there any installation instructions?',
     },
     {
         type: 'input',
-        name: 'installtion',
-        message: 'Installation Instructions',
+        name: 'installCommand',
+        message: 'Is there an installation command?',
+    },
+    {
+        type: 'input',
+        name: 'testInstruction',
+        message: 'Are there any test instructions?',
+    },
+    {
+        type: 'input',
+        name: 'testCommand',
+        message: 'Is there a test command?',
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'Usage Instructions',
-    },
-    {
-        type: 'checkbox',
-        name: 'license',
-        message: 'License Information',
-        choices: ['MIT', 'GNU General Public License v3.0']
+        message: 'What does the user need to know about using the repo?',
     },
     {
         type: 'input',
         name: 'contributors',
-        message: 'Who has contributed?',
+        message: 'What does the user need to know about contributing to the repo?',
+    },
+    {
+        type: 'checkbox',
+        name: 'license',
+        message: 'What kind of license should your project have?',
+        choices: ['MIT', 'GNU General Public License v3.0']
     },
     {
         type: 'input',
-        name: 'tests',
-        message: 'Tests',
+        name: 'email',
+        message: 'What is your email address?',
     },
     {
         type: 'input',
-        name: 'questions',
-        message: 'Questions',
+        name: 'github',
+        message: 'What is your Github username?',
     },
 ];
-
-// inquirer.prompt(questions);
 
 
 inquirer.prompt(questions)
 .then((data) => {
-    fs.writeFile('./README.md', JSON.stringify(data, null, '\t'), (err) =>
+    fs.writeFile('./README.md', generateMarkdown(data), (err) =>
     err ? console.log(err) : console.log('Success!')
     );
 })
 
-
-// function to write README file
-// function writeToFile() {
-//     fs.writeFile('./README.md', 'This is a test')
-// }
-
-// function test() {
-//     `test`;
-// }
 
 
 // const writeToFilePromise = util.promisify(fs.writeToFile);
