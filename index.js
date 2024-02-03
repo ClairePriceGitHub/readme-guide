@@ -73,7 +73,7 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'What kind of license should your project have?',
-        choices: ['MIT', 'GNU General Public License v3.0']
+        choices: ['MIT', 'Apache License 2.0', 'GNU General Public License v2.0', 'GNU General Public License v3.0']
     },
     {
         type: 'input',
@@ -95,6 +95,14 @@ inquirer.prompt(questions)
     );
 })
 
+// function workBadge(data) {
+//     const licenses = ['MIT', 'Apache License 2.0', 'GNU General Public License v2.0', 'GNU General Public License v3.0'];
+//     const links = ['one', 'two', 'three', 'four']
+//     const licensesIndex = licenses.indexOf(data.license.toString());
+//     const badge = links[licensesIndex];
+//     console.log(badge);
+//     return badge;
+// }
 
 
 // const writeToFilePromise = util.promisify(fs.writeToFile);
