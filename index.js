@@ -1,31 +1,7 @@
-// const fs = require("fs");
-// const path = require('path');
-// const inquirer = require("inquirer");
-// const generateMarkdown = require("./utils/generateMarkdown");
-
-// // array of questions for user
-// const questions = [
-
-// ];
-
-// // function to write README file
-// function writeToFile(fileName, data) {
-// }
-
-// // function to initialize program
-// function init() {
-
-// }
-
-// // function call to initialize program
-// init();
-
-
 const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
-const util = require('util');
 
 // array of questions for user
 const questions = [
@@ -42,22 +18,22 @@ const questions = [
     {
         type: 'input',
         name: 'installInstruction',
-        message: 'Are there any installation instructions?',
+        message: 'What are the installation instructions?',
     },
     {
         type: 'input',
         name: 'installCommand',
-        message: 'Is there an installation command?',
+        message: 'What command should be run to install dependancies?',
     },
     {
         type: 'input',
         name: 'testInstruction',
-        message: 'Are there any test instructions?',
+        message: 'What are the test instructions?',
     },
     {
         type: 'input',
         name: 'testCommand',
-        message: 'Is there a test command?',
+        message: 'What command should be run to run tests?',
     },
     {
         type: 'input',
@@ -87,7 +63,7 @@ const questions = [
     },
 ];
 
-
+// function to write README file
 inquirer.prompt(questions)
 .then((data) => {
     fs.writeFile('./README.md', generateMarkdown(data), (err) =>
@@ -95,26 +71,4 @@ inquirer.prompt(questions)
     );
 })
 
-// function workBadge(data) {
-//     const licenses = ['MIT', 'Apache License 2.0', 'GNU General Public License v2.0', 'GNU General Public License v3.0'];
-//     const links = ['one', 'two', 'three', 'four']
-//     const licensesIndex = licenses.indexOf(data.license.toString());
-//     const badge = links[licensesIndex];
-//     console.log(badge);
-//     return badge;
-// }
 
-
-// const writeToFilePromise = util.promisify(fs.writeToFile);
-
-// async function writeToFile() {
-//     try {
-//         await writeToFilePromise('./README.md', test);
-//         console.log('File written successfully\n');
-//     } catch (err) {
-//         console.log('Error writing to file', err);
-//     }
-// }
-
-// // function call to initialize program
-// writeToFile();
