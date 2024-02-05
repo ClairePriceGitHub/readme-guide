@@ -15,7 +15,7 @@ function generateMarkdown(data) {
   
   // Markdown structure
   return `# ${title} 
-  ${badge}
+   ${badge}
 
   ## Description
   ${description} 
