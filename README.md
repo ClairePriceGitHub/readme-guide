@@ -24,4 +24,4 @@ Use the command-line to answer pre-determined questions to then dynamically crea
 MIT
 
 ## Information
-You can find more of my work on [GitHub](https://github.com/clairepricegithub)
+You can find more of my work at [ClairePriceGitHub](https://github.com/clairepricegithub)
