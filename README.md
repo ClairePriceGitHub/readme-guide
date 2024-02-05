@@ -18,7 +18,7 @@ Use the command-line to answer pre-determined questions to then dynamically crea
 
 <p>&nbsp;</p>
 
-![screenshot](screenshot_image-1.png)
+![screenshot](assets/screenshot_image-1.png)
 
 ## License
 MIT
